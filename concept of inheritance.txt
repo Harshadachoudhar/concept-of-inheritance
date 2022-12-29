@@ -1,0 +1,174 @@
+/* File Employee.java */
+import java.util.*;
+public class Employee
+
+Scanner sc= new Scanner(System.in); //Scanner class Object
+String empName; //declaration of Employee name
+
+String address; //declaration of address
+
+String emailld; //declaration of mail id
+
+long mobileNo; //declaration of mobile no.
+
+int empld; //declaration of Employee ID
+
+double basicPay; //declaration of basic pay
+
+static int id=1000; //Staring of ID for all employee
+
+double netSalary,grosSalary; //declaration of net & gross Salary
+double hra,da,pf,staffClubFund; //declaration of hra,da,pf,staffClubFund
+
+public Employee()//Default constructor for Employee
+
+id++;
+empld = id;
+
+public void readData()
+{
+
+System.out.print("Enter the name of Employee: ");
+empName = sc.nextLine();
+
+System.out.print("Enter Address: ");
+
+address = sc.next();//input Employee address
+System.out.print("Enter email id: ");
+
+emailld = sc.next();//input Employee email id
+System.out.print("Enter Mobile No.: ");
+mobileNo=sc.nextLong();//input Employee mobile no.
+
+}
+public void displayEmployee()
+
+//display database for Employee
+System.out.printin("ID\tEMP NAME\tEmail Id \tADDRESS\t\tMOBILE");
+System.out.printIn(empId+"\t"+empName+"\t"+emailld+"\t"+address+"\t"+mobileNo );
+
+public void calculateSalary()
+{
+
+da = basicPay*.97; //calculating da
+
+hra = basicPay*.10; //calculating hra
+
+pf = basicPay*.12; //calculating pf
+
+staffClubFund = basicPay*0.001; //calculating staffClubFund
+grosSalary = basicPay + da + hra; //calculating gross salary
+netSalary = grosSalary- pf - staffClubFund;
+public void printSalarySlip()
+{
+
+//printing salary slip of Employee
+
+System.out.printin(" BASIC PAY :"+basicPay);
+System.out.printin(" DA :"+da);
+System.out.printin(" HRA :"+hra);
+System.out.printin(" PF :"+pf);
+System.out.printin(" GROSS SALARY :"+grosSalary);
+System.out.printin(" NET SALARY "+ netSalary);
+}
+
+/* File Programmer.java */
+public class Programmer extends Employee
+
+{ //inheriting Employee class in Programmer class
+public Programmer()
+
++
+
+public void readProgrammer()
+
+readData(); //input data from user for Programmer
+System.out.print("BASIC PAY of programmer: ");
+basicPay=sc.nextDouble();
+
+/* File Programmer.java */
+public class AsstProjectManager extends Employee
+
+{ //inheriting Employee class in AsstProgramManager class
+public AsstProjectManager()
+
+{
+
++
+public void readAsstProjectManager()
+
+readData(); //input data from user for Programmer
+System.out.print("BASIC PAY of AsstProjectManager: ");
+basicPay=sc.nextDouble();
+
+/* File TeamLead.java */
+public class TeamLead extends Employee
+
+{ //inheriting Employee class in AsstProgramManager class
+public TeamLead()
+{
+
+public void readTeamLead()
+
+readData(); //input data from user for Programmer
+System.out.print("BASIC PAY of TeamLead: ");
+basicPay=sc.nextDouble();
+
+}
+/* File ProjectManager.java */
+
+public class ProjectManager extends Employee
+{ //inheriting Employee class in AsstProgramManager class
+public ProjectManager()
+
+public void readProjectManager()
+
+readData(); //input data from user for Programmer
+System.out.print("BASIC PAY of ProjectManager: ");
+basicPay=sc.nextDouble();
+
+}
+
+}
+/* File TestEmployee.java */
+public class TestEmployee
+
+public static void main(String[] args)
+{
+Programmer p = new Programmer();
+AsstProjectManager ap = new AsstProjectManager();
+TeamLead tl = new TeamLead();
+ProjectManager pm = new ProjectManager();
+
+System.out.printin(" Programmer ");
+p.readProgrammer();
+
+System.out.printIn(" ProjectManager ");
+pm.readProjectManager();
+System.out.printIn(" TeamLead ");
+tl.readTeamLead();
+
+System.out.printIn(" AsstProjectManager ");
+ap.readAsstProjectManager();
+
+p.calculateSalary();
+pm.calculateSalary();
+tl.calculateSalary();
+ap.calculateSalary();
+
+System.out.printin(" Programmer Salary Slip");
+p.printSalarySlip();
+
+System.out.printin(" Project Manager Salary Slip");
+pm.printSalarySlip();
+
+System.out.printin(" Team Lead Salary Slip");
+tl.printSalarySlip();
+
+System.out.printin("Asst Project Manager Salary Slip");
+ap.printSalarySlip();
+
+}
+
+Conclusion: In this experiment we studied inheritance in Java.
+
